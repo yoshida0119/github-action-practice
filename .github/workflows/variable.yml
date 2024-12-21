@@ -13,5 +13,6 @@ jobs:
     steps:
       - run: echo "${EXAMPLE}"
       - uses: actions/checkout@v4
+      - run: echo "${{secrets.PASSWORD}}"
 
   
