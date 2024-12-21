@@ -1,5 +1,9 @@
 # github-action-practice
 
+## 機能一覧
+- [PRにコメントを追加する](./.github/workflows/pr_comment.yml)
+- [実行結果を環境変数に入れる](./.github/workflows/result_output.yml)
+
 ## 開発
 ### コマンド
 - github actionの確認
