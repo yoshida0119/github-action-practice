@@ -12,3 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ inputs.greeting }}"
+      # このコマンドで実行 gh workflow run param.yml -f greeting=hello

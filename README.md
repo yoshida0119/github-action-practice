@@ -2,8 +2,12 @@
 
 ## 機能一覧
 - [PRにコメントを追加する](./.github/workflows/pr_comment.yml)
+- [actionの手動実行](./.github/workflows/param.yml)
+- [変数・シークレットキーの設定](./.github/workflows/variable.yml)
+- [スケジュールの設定](./.github/workflows/schedule.yml)
 - [実行結果を環境変数に入れる](./.github/workflows/result_output.yml)
 - [goのCIテスト](./.github/workflows/go_test.yml)
+- [条件分岐](./.github/workflows/if.yml)
 - [依存関係を自動アップデート](./.github/dependabot.yml)
 
 ## 開発
@@ -16,41 +20,6 @@ gh run watch
 # 実行後
 gh run view
 ```
-
-## 記述
-- workflowを手動で実行する方法
-
-```yaml
-on: 
-  workflow_dispatch:
-```
-
-```shell
-# このコマンドで実行できる
-gh workflow run param.yml -f greeting=hello
-```
-
-- scheduleの設定
-
-```yaml
-on: 
-  schedule:
-    - cron: '*/15 * * * *' # 15分ごと
-```
-
-- 環境変数
-  - varsはgithubに設定されている環境変数
-```yaml
-env:
-  EXAMPLE: workflow sample text
-    ...
-jobs:
-    steps:
-      - run: echo "${EXAMPLE}"
-      - uses: actions/checkout@v4
-      - run: echo ${{ vars.USERNAME }}
-```
-
 
 ## gh, gitコマンド
 - PR関連
@@ -68,4 +37,19 @@ git push origin vx.x.x
 - releaseノート
 ```bash
 gh release create v.x.x --title "hoge title" --notes "hoge description"
+```
+
+
+## github package
+- githubでパッケージを管理できる
+```bash
+# githubのユーザー名を使う
+export GHCR_USER=$(gh config get -h github.com user)
+# build
+docker build -t ghcr.io/${GHCR_USER}/example:latest ./
+# auth
+gh auth refresh --scopes write:packages
+gh auth token | docker login ghcr.io -u ${GHCR_USER} --password-stdin
+docker push ghcr.io/${GHCR_USER}/example:latest
+docker pull ghcr.io/${GHCR_USER}/example:latest
 ```
