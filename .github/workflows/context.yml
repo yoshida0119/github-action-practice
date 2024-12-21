@@ -1,0 +1,8 @@
+name: contexts
+on: push
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.actor }}"
+      - uses: actions/checkout@v4
