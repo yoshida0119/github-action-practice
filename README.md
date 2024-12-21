@@ -31,3 +31,16 @@ on:
   schedule:
     - cron: '*/15 * * * *' # 15分ごと
 ```
+
+- 環境変数
+  - varsはgithubに設定されている環境変数
+```yaml
+env:
+  EXAMPLE: workflow sample text
+    ...
+jobs:
+    steps:
+      - run: echo "${EXAMPLE}"
+      - uses: actions/checkout@v4
+      - run: echo ${{ vars.USERNAME }}
+```
