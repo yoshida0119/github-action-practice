@@ -11,3 +11,15 @@ gh run watch
 gh run view
 ```
 
+## 記述
+- workflowを手動で実行する方法
+
+```yaml
+on: 
+  workflow_dispatch:
+```
+
+```shell
+# このコマンドで実行できる
+gh workflow run param.yml -f greeting=hello
+```
