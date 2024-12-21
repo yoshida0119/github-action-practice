@@ -1,9 +1,9 @@
 name: Schedule
 on: 
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/1 * * * *'
 jobs:
-  hello:
+  scheduletest:
     runs-on: ubuntu-latest
     steps:
       - run: date

@@ -23,3 +23,11 @@ on:
 # このコマンドで実行できる
 gh workflow run param.yml -f greeting=hello
 ```
+
+- scheduleの設定
+
+```yaml
+on: 
+  schedule:
+    - cron: '*/15 * * * *' # 15分ごと
+```
