@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions # github actionsの自動アップデート
+    directory: /
+    schedule:
+      interval: daily
