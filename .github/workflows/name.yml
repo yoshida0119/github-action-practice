@@ -1,0 +1,9 @@
+name: Naming
+on: push
+jobs:
+  print:
+    name: super useeful job
+    runs-on: ubuntu-latest
+    steps:
+      - name: amazing script
+        run: echo 'wow!'
