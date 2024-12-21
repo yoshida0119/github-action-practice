@@ -8,7 +8,7 @@ on:
         description: a cheerful word
         required: true
 jobs:
-  hello:
+  paramtest:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ inputs.greeting }}"
