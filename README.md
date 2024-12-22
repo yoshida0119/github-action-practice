@@ -19,6 +19,8 @@
 gh run watch
 # 実行後
 gh run view
+# 手動実行
+gh workflow run docker_image_publish -f version=0.0.1
 ```
 
 ## gh, gitコマンド
