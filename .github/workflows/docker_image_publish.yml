@@ -9,7 +9,7 @@ on:
 env:
   IMAGE_NAME: gha-image
 jobs:
-  puhlish:
+  publish:
     runs-on: ubuntu-latest
     permissions:
       packages: write
