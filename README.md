@@ -55,3 +55,7 @@ gh auth token | docker login ghcr.io -u ${GHCR_USER} --password-stdin
 docker push ghcr.io/${GHCR_USER}/example:latest
 docker pull ghcr.io/${GHCR_USER}/example:latest
 ```
+
+# AWS認証系
+- gh-oidcリポジトリに作成
+  - 認証系のため念の為privateリポジトリで練習
